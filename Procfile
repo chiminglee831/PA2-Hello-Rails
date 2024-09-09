@@ -1,2 +1,3 @@
-release: bundle exec rails db:migrate && bundle exec rails db:seed  
+release: bundle exec rails db:migrate
+release: bundle exec rails db:seed
 web: bundle exec rails server -p $PORT
