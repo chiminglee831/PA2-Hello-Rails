@@ -25,9 +25,14 @@ more_movies = [
   {:title => 'The Florida Project', :rating => 'R',
     :release_date => '22-May-2017'},
   {:title => 'Yi Yi', :rating => 'G',
-    :release_date => '06-Oct-2000'}
+    :release_date => '06-Oct-2000'},
+  {:title => 'Yi Yi 2', :rating => 'G',
+    :release_date => '06-Oct-2020'}
 ]
 
 more_movies.each do |movie|
-  Movie.create!(movie)
+  Movie.find_or_create_by(title: movie[:title], release_date: movie[:release_date]) do |m|
+    m.rating = movie[:rating]
+    m.release_date = movie[:release_date]
+  end
 end

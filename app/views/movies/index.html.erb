@@ -5,12 +5,35 @@
 <h1>Movies</h1>
 
 <div id="movies">
-  <% @movies.each do |movie| %>
-    <%= render movie %>
-    <p>
-      <%= link_to "Show this movie", movie %>
-    </p>
-  <% end %>
+  <table>
+    <thead>
+      <tr>
+        <th class="<%= sort_highlight('title') %>">
+          <%= link_to "Title #{sort_symbol('title')}", movies_path(sort: 'title', order: toggle_order('title')) %>
+        </th>
+        <th class="<%= sort_highlight('rating') %>">
+          <%= link_to "Rating #{sort_symbol('rating')}", movies_path(sort: 'rating', order: toggle_order('rating')) %>
+        </th>
+        <th class="<%= sort_highlight('release_date') %>">
+          <%= link_to "Release Date #{sort_symbol('release_date')}", movies_path(sort: 'release_date', order: toggle_order('release_date')) %>
+        </th>
+        <th>Actions</th>
+      </tr>
+    </thead>
+    <tbody>
+      <% @movies.each do |movie| %>
+        <tr>
+          <td ><%= movie.title %></td>
+          <td><%= movie.rating %></td>
+          <td><%= movie.release_date.strftime("%d-%b-%Y") %></td>
+          <td><%= link_to "Show", movie %></td>
+        </tr>
+      <% end %>
+    </tbody>
+    <tfoot>
+      <tr>
+        <td colspan="4"><%= link_to "New movie", new_movie_path %></td>
+      </tr>
+    </tfoot>
+  </table>
 </div>
-
-<%= link_to "New movie", new_movie_path %>

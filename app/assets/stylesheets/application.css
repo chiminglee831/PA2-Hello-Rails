@@ -13,3 +13,57 @@
  *= require_tree .
  *= require_self
  */
+
+ .sort-asc {
+    background-color: lightblue;
+    font-weight: bold;
+  }
+  
+  .sort-desc {
+    background-color: lightcoral;
+    font-weight: bold;
+  }
+  table {
+    width: 100%;
+  }
+  
+  th, td {
+    padding: 8px;
+    text-align: left;
+    border-bottom: 1px solid #ddd;
+  }
+  
+  tfoot td {
+    text-align: center;
+    padding-top: 10px;
+  }
+
+  h1 {
+    text-align: center;
+  }
+
+  .movie-details {
+    background-color: #f9f9f9;
+    padding: 20px;
+    border: 1px solid #ddd;
+    border-radius: 5px;
+    margin-bottom: 15px;
+  }
+
+  .movie-actions {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-top: 15px;
+  }
+
+  .destroy-movie {
+    text-align: center;
+  }
+
+  body {
+    background-color: #f0f0f0; /* 設定整個頁面的背景顏色 */
+    font-family: Arial, sans-serif; /* 可以增加字體風格，讓整體更美觀 */
+    margin: 0;
+    padding: 0;
+  }
