@@ -22,3 +22,6 @@ Things you may want to cover:
 * Deployment instructions
 
 * ...
+
+link to my Heroku app:
+https://software-engineering-pa2-ad5742c9fd33.herokuapp.com/movies
